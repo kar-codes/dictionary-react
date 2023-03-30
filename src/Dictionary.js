@@ -4,13 +4,12 @@ import Results from "./Results";
 import "./Dictionary.css";
 
 export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState();
 
-    function handleResponse(response) {
-      console.log(response.data.meanings[0].definition);
-    }
-
-
+  function handleResponse(response) {
+    setResults(response.data);
+  }
 
   function search(event) {
     event.preventDefault();
@@ -20,21 +19,17 @@ export default function Dictionary() {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  
-
-
   function handleKeywordChange(event) {
     setKeyword(event.target.value);
-
   }
 
   return (
-  <div className="Dictionary">
-    <form onSubmit={search}>
-      <input type="search" autoFocus={true} onChange={handleKeywordChange} />
-    </form>
-    <Results/>
-  </div>
+    <div className="Dictionary">
+      <form onSubmit={search}>
+        <input type="search" autoFocus={true} onChange={handleKeywordChange} />
+      </form>
+      <Results results={results} />
+    </div>
   );
 }
 // what i did here was create an event listener that when the submit button is clicked it calls the function search, then i defined the function search (which receive an event i.e search(event)) inside of the dictionary function before the return
