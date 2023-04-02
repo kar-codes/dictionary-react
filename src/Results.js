@@ -2,26 +2,21 @@ import React from "react";
 import Meaning from "./Meaning";
 
 export default function Results(props) {
-    const meanings = props.results?.meanings?.[0];
+    const meaning = props.results?.meanings?.[1];
 
     if(!props.results) {
         return null;
     }
 
-    if (!meanings) {
+    if (!meaning) {
         return <div className="Results">Word not found</div>;
     }
 
     return (
         <div className="Results">
-            <h2>{props.results.word}</h2>
-            {props.results.meanings.map(function(meaning, index)
-            {
+            <h2 className="typewriter">{props.results.word}</h2>
 
-                return <div key={index}>
-                    <Meaning data={meaning}/>
-                </div>
-            })};
+            <Meaning data={meaning}/>
             
         </div>
     );

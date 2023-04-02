@@ -5,7 +5,7 @@ header {
 }
 
 body{
- 
+  
 }
 
 
@@ -15,5 +15,13 @@ body{
   width: 700px;
   min-height: 400px;
   margin: 30px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+footer {
+  position: relative;
 }
 

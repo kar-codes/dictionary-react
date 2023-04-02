@@ -12,10 +12,10 @@ function App() {
         <main>
           <Dictionary />
         </main>
-        <footer className="text-center">
-          <small>Coded by Kar and is open-source on Github</small>
-        </footer>
       </div>
+      <footer className="text-center">
+          <small>Coded by Kar and is open-source on Github</small>
+      </footer>
     </div>
   );
 }

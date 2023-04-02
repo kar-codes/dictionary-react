@@ -3,17 +3,13 @@ import React from "react";
 export default function Meaning({data: {example, definition, partOfSpeech }}){
     return (
         <div className="meaning">
-            <h3>{partOfSpeech}</h3>
-            <p>{definition}</p>
-            <p>{example}</p>
+            <p><strong>Part of speech: </strong>{partOfSpeech}</p>
+            <p><strong>Definition: </strong>{definition}.</p>
+            {example && (
+                <p><strong>Example: </strong>{example}.</p>
+            )}
         </div>
-        
-    );
-        
-
-       
-    
-   
+    ); 
 }
 
 
