@@ -2,18 +2,21 @@ import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
 import "./Dictionary.css";
+import Photos from "./Photos";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("sunset");
   const [results, setResults] = useState();
   const [loaded, setLoaded] = useState(false);
+  const [photos, setPhotos] = useState(null);
 
   function handleResponse(response) {
     setResults(response.data);
   }
 
   function handleImagesResponse(response){
-    console.log(response.data);
+    setPhotos(response.data.photos);
+    
   }
 
   function search(){
@@ -49,6 +52,7 @@ export default function Dictionary() {
       Get definitions, synonyms, phonetics and more...
       </div>
       <Results results={results} />
+      <Photos photos={photos}/>
     </div>
   );
 } else {
