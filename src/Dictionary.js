@@ -12,10 +12,17 @@ export default function Dictionary() {
     setResults(response.data);
   }
 
+  function handleImagesResponse(response){
+    console.log(response.data);
+  }
+
   function search(){
     const apiKey = process.env.REACT_APP_DICTIONARY_API_KEY;
     let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
+
+    let apiUrlImages = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
+    axios.get(apiUrlImages).then(handleImagesResponse);
   }
 
   function handleSubmit(event) {
@@ -39,7 +46,7 @@ export default function Dictionary() {
         <input type="search" autoFocus={true} onChange={handleKeywordChange} />
       </form>
       <div className="hint">
-      Get definitions, synonyms, translations and more
+      Get definitions, synonyms, phonetics and more...
       </div>
       <Results results={results} />
     </div>

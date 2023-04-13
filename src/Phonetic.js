@@ -15,7 +15,7 @@ export default function Phonetic({data, speechText}){
         onClick={() => speak({ text: speechText})}>
         <BsFillVolumeUpFill/>
         </button>
-        <p><strong>Phonetic: </strong>{data}</p>
+        <p>{data}</p>
     </div>
    )
 }

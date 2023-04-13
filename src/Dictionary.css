@@ -1,3 +1,7 @@
+.Dictionary{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
 .Dictionary input {
   margin-top: 15px;
   margin-bottom: 15px;
