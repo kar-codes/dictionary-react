@@ -1,4 +1,13 @@
-.photos img {
-  border-radius: 3px;
-  margin: 3px;
+.photos {
+  padding: 6px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
+
+.photos img {
+  display: block;
+  border-radius: 3px;
+  width: calc(33% - 3px);
+}
+

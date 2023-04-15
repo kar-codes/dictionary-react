@@ -5,7 +5,7 @@ export default function Photos({ photos }){
     return (
         <section className="photos">
             {photos.map(function({ src }, index) {
-                return <img key={`photos-${index}`} src={src.landscape} width={150} />
+                return <img key={`photos-${index}`} src={src.landscape} />
             })}
         </section>
     );
