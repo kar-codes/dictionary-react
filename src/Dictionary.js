@@ -10,6 +10,8 @@ export default function Dictionary() {
   const [loaded, setLoaded] = useState(false);
   const [photos, setPhotos] = useState(null);
 
+  console.log({photos})
+
   function handleResponse(response) {
     setResults(response.data);
   }
@@ -52,7 +54,10 @@ export default function Dictionary() {
       Get definitions, synonyms, phonetics and more...
       </div>
       <Results results={results} />
-      <Photos photos={photos}/>
+
+      {photos?.length && (
+        <Photos photos={photos} />
+      )}
     </div>
   );
 } else {
